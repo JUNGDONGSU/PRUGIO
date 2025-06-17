@@ -1,11 +1,301 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>GiGAHUB 메인</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>용인 푸르지오 원클러스터 2·3단지</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #333; /* Darker text for readability */
+        }
+        .header-bg {
+            background: linear-gradient(to right, #0a2d5e, #1a4a8a); /* Deep blue gradient */
+        }
+        .section-bg-light {
+            background-color: #ffffff;
+        }
+        .section-bg-dark {
+            background-color: #f8fafd; /* Slightly off-white for contrast */
+        }
+        .btn-primary {
+            background-color: #0a2d5e; /* Primary brand blue */
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #1a4a8a; /* Darker blue on hover */
+        }
+        .text-prugio-blue {
+            color: #0a2d5e;
+        }
+        .border-prugio-blue {
+            border-color: #0a2d5e;
+        }
+        .shadow-custom {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
 </head>
-<body>
-  <h1>환영합니다! 쌍용 스마트 어반 분양 페이지</h1>
-  <img src="https://raw.githubusercontent.com/JUNGDONGSU/GiGAHUB/main/Asset%2010.png" alt="분양 이미지" style="max-width:100%;">
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="header-bg text-white py-4 md:py-6 shadow-lg rounded-b-xl">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-3xl font-bold mb-2 md:mb-0">
+                <span class="text-white">PRUGIO</span>
+                <span class="text-yellow-300">ONE</span><span class="text-white">CLUSTER</span>
+            </div>
+            <nav class="space-x-4 md:space-x-8 text-lg">
+                <a href="#overview" class="hover:text-yellow-300 transition duration-300">사업 개요</a>
+                <a href="#location" class="hover:text-yellow-300 transition duration-300">입지 환경</a>
+                <a href="#premium" class="hover:text-yellow-300 transition duration-300">프리미엄</a>
+                <a href="#community" class="hover:text-yellow-300 transition duration-300">커뮤니티</a>
+                <a href="#contact" class="hover:text-yellow-300 transition duration-300">문의</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-[500px] md:h-[700px] flex items-center justify-center text-white text-center shadow-inner rounded-b-xl" style="background-image: url('https://placehold.co/1920x700/0a2d5e/ffffff?text=Yongin+Prugio+OneCluster');">
+        <div class="absolute inset-0 bg-black opacity-50 rounded-b-xl"></div>
+        <div class="relative z-10 p-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-down">
+                반도체 클러스터의 비전을 누리는<br>
+                용인의 위대한 변화
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-8 animate-fade-in-up">
+                용인 푸르지오 원클러스터 2·3단지
+            </p>
+            <a href="#contact" class="btn-primary text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105">
+                분양 상담 신청
+            </a>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section-bg-light py-16 px-4 rounded-xl shadow-lg mt-8 mx-auto max-w-7xl">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10 text-prugio-blue">사업 개요</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">위치</h3>
+                    <p class="text-gray-700">경기도 용인시 처인구 남동 산 126-13번지 일원</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">규모</h3>
+                    <p class="text-gray-700">지하 4층 ~ 지상 28층, 총 30개 동, 아파트 3,724세대</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">세대 구성 (2·3단지)</h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>2단지: 1,804세대 (59A, 59B, 84A, 84B, 84C 타입)</li>
+                        <li>3단지: 239세대 (84A, 84B, 84C 타입)</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">주요 시설 (지구 내)</h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>초등학교 (예정) 1개소</li>
+                        <li>공원/녹지: 근린공원2, 어린이공원 2개소, 소공원 1개소, 45번 국도 상부공원화</li>
+                        <li>기타: 도서관 1개소, 체육시설 1개소 (실내 배드민턴장), 근린생활시설 1개소</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">입주 예정일</h3>
+                    <p class="text-gray-700">2028년 2월 예정</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">특징</h3>
+                    <p class="text-gray-700">총 3,724세대 대규모 신도시급 푸르지오 브랜드 타운</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="section-bg-dark py-16 px-4 rounded-xl shadow-lg mt-8 mx-auto max-w-7xl">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10 text-prugio-blue">압도적인 입지 환경</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">세계 최대 규모 반도체 클러스터</h3>
+                        <p class="text-gray-700 mb-2">
+                            삼성전자 용인 첨단 시스템 반도체 클러스터 국가산단 (예정) 10분대 접근 가능
+                        </p>
+                        <p class="text-gray-700">
+                            SK하이닉스 용인 반도체 클러스터 일반산단 (예정) 20분대 접근 가능
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">우수한 교통 개발 호재</h3>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li>국지도 57호선, 국도 45호선 확장 추진 중</li>
+                            <li>국지도 84호선 개설 (공사 중, 2026년 말 개통 예정)</li>
+                            <li>45번 국도 상부도로 공원화 조성 (에버랜드 조경 도입 예정)</li>
+                            <li>송전선로 지중화 (기존 송전탑 철거 예정)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">풍부한 생활 인프라</h3>
+                        <p class="text-gray-700">
+                            약 1.5만평 녹지, 초등학교, 시립도서관, 체육/근린생활시설 등 One-Stop 생활 인프라 구축
+                        </p>
+                    </div>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-xl">
+                    <!-- Placeholder for location map -->
+                    <img src="https://placehold.co/800x600/ccc/333?text=Location+Map" alt="Location Map" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Section -->
+    <section id="premium" class="section-bg-light py-16 px-4 rounded-xl shadow-lg mt-8 mx-auto max-w-7xl">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10 text-prugio-blue">용인 푸르지오 원클러스터의 프리미엄</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div>
+                    <h3 class="text-3xl font-bold mb-6 text-prugio-blue">미래 가치</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                            <h4 class="text-2xl font-semibold mb-2">1단지 100% 완판! 처인구 최고가 신고!</h4>
+                            <p class="text-gray-700">
+                                기존 우미린 대비 5천만원 높은 6.5억원 실거래 신고 (최대 P8천만원)
+                            </p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                            <h4 class="text-2xl font-semibold mb-2">3단계 스트레스 DSR 규제 미적용 단지</h4>
+                            <p class="text-gray-700">
+                                금융 부담이 적어 막차 수요 관심 급증
+                            </p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                            <h4 class="text-2xl font-semibold mb-2">분양가는 지금이 가장 싸다!</h4>
+                            <p class="text-gray-700">
+                                토지가, 인건비, 건축비 상승으로 신규 공급 상품 분양가 상승 불가피
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold mb-6 text-prugio-blue">교육 및 생활</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                            <h4 class="text-2xl font-semibold mb-2">원스톱 교육 특화 단지</h4>
+                            <ul class="list-disc list-inside text-gray-700">
+                                <li>단지 내 국공립 어린이집 설치 의무화</li>
+                                <li>단지 앞 초등학교 개교 확정 (2027년)</li>
+                                <li>종로엠스쿨 단지 내 입점 (입주민 자녀 초·중 수강료 2년간 30% 지원)</li>
+                                <li>공공도서관 (1,221평 규모) 2·3단지 입주 전 준공 예정</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                            <h4 class="text-2xl font-semibold mb-2">대우건설의 '스마트 3중 바닥 구조'</h4>
+                            <p class="text-gray-700">
+                                층간 소음을 획기적으로 줄여주는 기술 적용
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <img src="https://placehold.co/1200x400/0a2d5e/ffffff?text=Premium+Image" alt="Premium Features" class="rounded-lg shadow-xl mx-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="section-bg-dark py-16 px-4 rounded-xl shadow-lg mt-8 mx-auto max-w-7xl">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10 text-prugio-blue">프리미엄 커뮤니티 시설</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">센트럴 스퀘어 (2단지)</h3>
+                    <p class="text-gray-700">푸른 녹음 속 자연을 즐길 수 있는 중앙 마당</p>
+                    <img src="https://placehold.co/400x300/aaddff/0a2d5e?text=Central+Square" alt="Central Square" class="mt-4 rounded-md">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">사우나 (B2F)</h3>
+                    <p class="text-gray-700">운동 후 피로 회복을 돕고 스트레스를 풀어주는 공간</p>
+                    <img src="https://placehold.co/400x300/aaddff/0a2d5e?text=Sauna" alt="Sauna" class="mt-4 rounded-md">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">테니스 클럽 (B2F)</h3>
+                    <p class="text-gray-700">스크린 테니스와 단식 코트가 있는 이웃과 함께 즐길 수 있는 공간</p>
+                    <img src="https://placehold.co/400x300/aaddff/0a2d5e?text=Tennis+Club" alt="Tennis Club" class="mt-4 rounded-md">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">실내 체육관 (B3F)</h3>
+                    <p class="text-gray-700">날씨에 구애받지 않고 다양한 생활 체육을 즐길 수 있는 공간</p>
+                    <img src="https://placehold.co/400x300/aaddff/0a2d5e?text=Indoor+Gym" alt="Indoor Gym" class="mt-4 rounded-md">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">키즈 카페</h3>
+                    <p class="text-gray-700">친구들과 뛰어놀고 교류하며, 카페와 연계된 대형 키즈 공간</p>
+                    <img src="https://placehold.co/400x300/aaddff/0a2d5e?text=Kids+Cafe" alt="Kids Cafe" class="mt-4 rounded-md">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">어린이 놀이터 (3단지)</h3>
+                    <p class="text-gray-700">상상력과 호기심을 자극하는 정서 발달 상상 놀이터</p>
+                    <img src="https://placehold.co/400x300/aaddff/0a2d5e?text=Kids+Playground" alt="Kids Playground" class="mt-4 rounded-md">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">힐링 산책로 (2단지)</h3>
+                    <p class="text-gray-700">여유로운 일상을 즐길 수 있는 산책로</p>
+                    <img src="https://placehold.co/400x300/aaddff/0a2d5e?text=Walking+Trail" alt="Walking Trail" class="mt-4 rounded-md">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold mb-3 text-prugio-blue">주민 운동 시설 (2단지)</h3>
+                    <p class="text-gray-700">주민들의 건강한 일상을 즐길 수 있는 체력 증진 운동 공간</p>
+                    <img src="https://placehold.co/400x300/aaddff/0a2d5e?text=Fitness+Area" alt="Fitness Area" class="mt-4 rounded-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-bg-light py-16 px-4 rounded-xl shadow-lg mt-8 mb-12 mx-auto max-w-7xl">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8 text-prugio-blue">문의하기</h2>
+            <p class="text-xl text-gray-700 mb-8">
+                용인 푸르지오 원클러스터 2·3단지에 대한 더 자세한 정보는 아래 문의처로 연락 주십시오.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105 border border-prugio-blue">
+                    <h3 class="text-3xl font-semibold mb-4 text-prugio-blue">대표 번호</h3>
+                    <p class="text-4xl font-bold text-gray-800">1688-5925</p> <!-- Replace xxxx with actual number if available -->
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105 border border-prugio-blue">
+                    <h3 class="text-3xl font-semibold mb-4 text-prugio-blue">견본주택 주소</h3>
+                    <p class="text-lg text-gray-800">
+                        용인시 수지구 동천동 901<br>
+                        (신분당선 동천역 부근 2번 출구)
+                    </p>
+                </div>
+            </div>
+            <p class="text-sm text-gray-500 mt-10">
+                ※ 상기 이미지는 소비자의 이해를 돕기 위해 제작된 것으로 실제와 다를 수 있으며, 건축물의 외관 및 색채계획은 변경될 수 있습니다. 또한 조경 시설물과 식재는 실제와 다를 수 있습니다.
+            </p>
+            <p class="text-sm text-gray-500 mt-2">
+                ※ 본 제작물은 이해를 돕기 위한 참고용 자료로 실제와 다를 수 있으며, CG 및 사진 자료 / 면적 등은 향후 인허가 과정에서 변경될 수 있으니 입주자 모집공고 및 견본주택에서 필히 확인해주시기 바랍니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 rounded-t-xl">
+        <div class="container mx-auto text-center px-4">
+            <p class="text-lg mb-2">용인 푸르지오 원클러스터 2·3단지</p>
+            <p class="text-sm text-gray-400">&copy; 2025 HANARUM. All rights reserved.</p>
+            <p class="text-sm text-gray-400">본 페이지의 모든 콘텐츠는 저작권법에 의해 보호됩니다.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
