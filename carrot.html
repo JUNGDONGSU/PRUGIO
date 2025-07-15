@@ -7,11 +7,23 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom font for better Korean display if not using Tailwind's default */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body {
-            font-family: 'Inter', 'Pretendard', '맑은 고딕', sans-serif;
+            font-family: 'Inter', 'Pretendard', '맑은 고딕', sans-serif; /* Added Korean fonts */
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #333; /* Darker text for readability */
+            /* Align content to top if only menu and one section */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        /* Ensure image is responsive and maintains aspect ratio */
+        .header-bg {
+            background: linear-gradient(to right, #0a2d5e, #1a4a8a); /* Deep blue gradient */
+        }
+        .section-bg-light {
+            background-color: #ffffff;
+        }
+        /* Styles from carrot.html */
         .card-image {
             width: 100%;
             height: auto;
@@ -19,109 +31,135 @@
             border-top-left-radius: 1.25rem; /* rounded-3xl */
             border-top-right-radius: 1.25rem; /* rounded-3xl */
         }
-        /* Style for additional images */
         .additional-image {
             width: 100%;
             height: auto;
             object-fit: cover;
             border-radius: 0.75rem; /* rounded-xl */
         }
-        /* Ensure buttons take full width when stacked */
         .btn-full-width {
             width: calc(100% - 2rem); /* Full width minus gap on sides for small screens */
             max-width: 20rem; /* Max width for larger screens to keep it centered and readable */
         }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
-    <div class="bg-white rounded-3xl shadow-xl overflow-hidden max-w-sm w-full">
-        <!-- Main business card image -->
-        <img src="https://raw.githubusercontent.com/JUNGDONGSU/smate-urban/refs/heads/main/image/business%20card.webp" alt="정동수 차장 명함 이미지" class="card-image">
+<body class="antialiased">
 
-        <!-- Personal Branding Storytelling Section -->
-        <div class="bg-blue-50 p-4 rounded-xl mb-6 shadow-inner mx-6">
-            <p class="text-gray-700 text-sm leading-relaxed">
-                <span class="font-bold text-blue-700">고객님의 성공적인 미래를 위한 최적의 파트너입니다.</span><br>
-                수년간의 경험과 깊이 있는 전문성으로, 고객 한 분 한 분의 니즈에 맞춰 최상의 솔루션을 제공합니다.
-                믿음과 신뢰를 바탕으로 함께 성장하는 스토리를 만들어가겠습니다.
-            </p>
+    <!-- Header Section - Hidden as per request -->
+    <header class="header-bg text-white py-4 md:py-6 shadow-lg rounded-b-xl hidden">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-3xl font-bold mb-2 md:mb-0">
+                <span class="text-white">PRUGIO</span>
+                <span class="text-yellow-300">ONE</span><span class="text-white">CLUSTER</span>
+            </div>
+            <nav class="space-x-4 md:space-x-8 text-lg">
+                <a href="#dongsu-carrot" class="hover:text-yellow-300 transition duration-300">동수당근</a>
+            </nav>
         </div>
+    </header>
 
-        <!-- 평택 진위 쌍용 스마트어반 정보 추가 -->
-        <div class="bg-gray-50 p-4 rounded-xl mb-6 shadow-inner mx-6">
-            <h3 class="text-lg font-bold text-gray-800 mb-2">평택 진위 쌍용 스마트어반 민간임대 선착순 모집</h3>
-            <p class="text-gray-700 text-sm mb-2">
-                1,228세대 청약 없는 전세형 민간 임대 아파트! 가곡2지구 도시개발구역 지정 계획도시!
-            </p>
-            <p class="text-gray-700 text-sm mb-2">
-                평당 900만 원대, 중도금 무이자, 10년간 세금 부담 없이 가능한 조건을 확인해 보세요.
-            </p>
-            <a href="https://xn--vk1bl3rxogh2b96d75ueibs8g.shop/" target="_blank" class="text-blue-600 hover:underline text-sm font-semibold block mb-4">
-                ▶ 홈페이지 자세히 보기
-            </a>
+    <!-- 동수당근 Section (Digital Business Card) -->
+    <section id="dongsu-carrot" class="section-bg-light py-16 px-4 rounded-xl shadow-lg mt-8 mb-12 mx-auto max-w-7xl flex-grow flex items-center justify-center">
+        <div class="container mx-auto text-center">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden max-w-sm w-full mx-auto">
+                <!-- Main business card image -->
+                <img src="https://raw.githubusercontent.com/JUNGDONGSU/smate-urban/refs/heads/main/image/business%20card.webp" alt="정동수 차장 명함 이미지" class="card-image">
 
-            <h4 class="text-md font-bold text-gray-700 mb-1">■ 모집 홍보관 방문 및 계약자 이벤트</h4>
-            <p class="text-gray-600 text-sm mb-2">- (선착순 명)</p>
+                <!-- New image added here (from previous request) -->
+                <div class="p-6 pt-0 flex flex-col items-center gap-4">
+                    <img src="https://raw.githubusercontent.com/JUNGDONGSU/smate-urban/refs/heads/main/image/20250715_143509811_01_optimized%20(1).webp" alt="추가 이미지" class="additional-image mt-4 shadow-md">
+                </div>
 
-            <h4 class="text-md font-bold text-gray-700 mb-1">■ &lt;평택 진위 쌍용 스마트어반&gt; 안내</h4>
-            <ul class="list-disc list-inside text-gray-600 text-sm mb-2">
-                <li>총 1,228세대 대단지 민간 임대 아파트</li>
-                <li>전용 면적 64㎡(26평형), 77㎡(30평형), 84㎡(34평형)</li>
-                <li>평당 900만 원대</li>
-                <li>계약금 1천만 원</li>
-                <li>청약 통장 필요 없음</li>
-                <li>주택도시보증공사 보증금100%보증</li>
-                <li>세금부담無</li>
-                <li>유주택자 계약가능</li>
-                <li>전대,전매가능</li>
-                <li>외국인(F4,F5)계약가능</li>
-                <li>발코니 확장 무상</li>
-            </ul>
+                <!-- Personal Branding Storytelling Section -->
+                <div class="bg-blue-50 p-4 rounded-xl mb-6 shadow-inner mx-6">
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        <span class="font-bold text-blue-700">고객님의 성공적인 미래를 위한 최적의 파트너입니다.</span><br>
+                        수년간의 경험과 깊이 있는 전문성으로, 고객 한 분 한 분의 니즈에 맞춰 최상의 솔루션을 제공합니다.
+                        믿음과 신뢰를 바탕으로 함께 성장하는 스토리를 만들어가겠습니다.
+                    </p>
+                </div>
 
-            <h4 class="text-md font-bold text-gray-700 mb-1">■ &lt;평택 진위 쌍용 스마트어반&gt; 인프라</h4>
-            <ul class="list-disc list-inside text-gray-600 text-sm">
-                <li>1호선 진위역 도보 거리</li>
-                <li>경기도 평택시/오산시/동탄시 생활권</li>
-                <li>평택동부고속화도로 인접, 경부고속도로 남사진위IC 교통망</li>
-                <li>LG디지털파크일반산업단지, 용인 반도체 클러스터(착공 임박)</li>
-            </ul>
+                <!-- 평택 진위 쌍용 스마트어반 정보 추가 -->
+                <div class="bg-gray-50 p-4 rounded-xl mb-6 shadow-inner mx-6">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 text-center">👉평택 진위 쌍용 스마트어반 <br>민간임대 마감 임박</h3>
+                    <p class="text-gray-700 text-sm mb-2 text-left">
+                        1,228세대 청약 없는 전세형 민간 임대 아파트! 가곡2지구 도시개발구역 지정 계획도시!
+                    </p>
+                    <p class="text-gray-700 text-sm mb-2 text-left">
+                        평당 900만 원대, 중도금 무이자, 10년간 세금 부담 없이 가능한 조건을 확인해 보세요.
+                    </p>
+                    <a href="https://xn--vk1bl3rxogh2b96d75ueibs8g.shop/" target="_blank" class="text-blue-600 hover:underline text-sm font-semibold block mb-4 text-left">
+                        ▶ 홈페이지 자세히 보기
+                    </a>
+
+                    <h4 class="text-md font-bold text-gray-700 mb-1 text-left">■ 모집 홍보관 방문 및 계약자 이벤트</h4>
+                    <p class="text-gray-600 text-sm mb-2 text-left"></p>
+                    <!-- Gift Voucher_optimized.webp 이미지 이동 -->
+                    <img src="https://raw.githubusercontent.com/JUNGDONGSU/smate-urban/refs/heads/main/image/Gift%20Voucher_optimized.webp" alt="기프트 바우처 최적화 이미지" class="additional-image mt-4 shadow-md mb-4">
+
+                    <h4 class="text-md font-bold text-gray-700 mb-1 text-left">■ &lt;평택 진위 쌍용 스마트어반&gt; 안내</h4>
+                    <ul class="list-disc list-inside text-gray-600 text-sm mb-2 text-left">
+                        <li>총 1,228세대 대단지 민간 임대 아파트</li>
+                        <li>전용 면적 64㎡(26평형), 77㎡(30평형), 84㎡(34평형)</li>
+                        <li>평당 900만 원대</li>
+                        <li>계약금 1천만 원</li>
+                        <li>청약 통장 필요 없음</li>
+                        <li>주택도시보증공사 보증금100%보증</li>
+                        <li>세금부담無</li>
+                        <li>유주택자 계약가능</li>
+                        <li>전대,전매가능</li>
+                        <li>외국인(F4,F5)계약가능</li>
+                        <li>발코니 확장 무상</li>
+                        <!-- New image added below "발코니 확장 무상" -->
+                        <img src="https://raw.githubusercontent.com/JUNGDONGSU/smate-urban/refs/heads/main/image/20250715_143509811_01_optimized%20(2).webp" alt="발코니 확장 이미지" class="additional-image mt-4 shadow-md">
+                    </ul>
+
+                    <h4 class="text-md font-bold text-gray-700 mb-1 text-left">■ &lt;평택 진위 쌍용 스마트어반&gt; 인프라</h4>
+                    <ul class="list-disc list-inside text-gray-600 text-sm text-left">
+                        <li>1호선 진위역 도보 거리</li>
+                        <li>경기도 평택시/오산시/동탄시 생활권</li>
+                        <li>평택동부고속화도로 인접, 경부고속도로 남사진위IC 교통망</li>
+                        <li>LG디지털파크일반산업단지, 용인 반도체 클러스터(착공 임박)</li>
+                    </ul>
+                </div>
+
+                <!-- Additional images (황금열쇠만 남음) -->
+                <div class="p-6 pt-0 flex flex-col items-center gap-4">
+                    <img src="https://raw.githubusercontent.com/JUNGDONGSU/PRUGIO/refs/heads/main/image/golden_key.webp" alt="황금열쇠 최적화 이미지" class="additional-image shadow-md">
+                </div>
+
+                <!-- Buttons arranged vertically -->
+                <div class="flex flex-col items-center gap-4 px-6 pb-6">
+                    <!-- 전화 걸기 버튼 -->
+                    <a href="tel:01020419900" class="btn-full-width flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-xl shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                        전화 걸기
+                    </a>
+                    <!-- 문자 보내기 버튼 -->
+                    <a href="sms:01020419900" class="btn-full-width flex items-center justify-center px-6 py-3 bg-yellow-600 text-white rounded-xl shadow-lg hover:bg-yellow-700 transition duration-300 ease-in-out transform hover:scale-105">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.941 0 01-4.758-1.12L3 17l1.62-2.16a8.941 8.941 0 01-1.12-4.758c0-4.418 3.582-8 8-8s8 3.582 8 8z" clip-rule="evenodd"></path></svg>
+                        문자 보내기
+                    </a>
+                    <!-- 홈페이지 방문 버튼 -->
+                    <a href="https://xn--vk1bl3rxogh2b96d75ueibs8g.shop/" target="_blank" class="btn-full-width flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-xl shadow-lg hover:bg-green-700 transition duration-300 ease-in-out transform hover:scale-105">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>
+                        홈페이지 방문
+                    </a>
+                    <!-- 연락처 저장 (vCard) 버튼 -->
+                    <button onclick="downloadVCard()" class="btn-full-width flex items-center justify-center px-6 py-3 bg-purple-600 text-white rounded-xl shadow-lg hover:bg-purple-700 transition duration-300 ease-in-out transform hover:scale-105">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        연락처 저장 (vCard)
+                    </button>
+                </div>
+            </div>
         </div>
-
-        <!-- Additional images below the storytelling section -->
-        <div class="p-6 pt-0 flex flex-col items-center gap-4">
-            <img src="https://raw.githubusercontent.com/JUNGDONGSU/smate-urban/refs/heads/main/image/Gift%20Voucher_optimized.webp" alt="기프트 바우처 최적화 이미지" class="additional-image mt-4 shadow-md">
-            <img src="https://raw.githubusercontent.com/JUNGDONGSU/smate-urban/refs/heads/main/image/Gift%20Voucher%20A01.webp" alt="기프트 바우처 A01 이미지" class="additional-image shadow-md">
-        </div>
-
-        <!-- Buttons arranged vertically -->
-        <div class="flex flex-col items-center gap-4 px-6 pb-6">
-            <!-- 전화 걸기 버튼 -->
-            <a href="tel:01020419900" class="btn-full-width flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-xl shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
-                전화 걸기
-            </a>
-            <!-- 문자 보내기 버튼 -->
-            <a href="sms:01020419900" class="btn-full-width flex items-center justify-center px-6 py-3 bg-yellow-600 text-white rounded-xl shadow-lg hover:bg-yellow-700 transition duration-300 ease-in-out transform hover:scale-105">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.941 0 01-4.758-1.12L3 17l1.62-2.16a8.941 8.941 0 01-1.12-4.758c0-4.418 3.582-8 8-8s8 3.582 8 8z" clip-rule="evenodd"></path></svg>
-                문자 보내기
-            </a>
-            <!-- 홈페이지 방문 버튼 -->
-            <a href="https://xn--vk1bl3rxogh2b96d75ueibs8g.shop/" target="_blank" class="btn-full-width flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-xl shadow-lg hover:bg-green-700 transition duration-300 ease-in-out transform hover:scale-105">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>
-                홈페이지 방문
-            </a>
-            <!-- 연락처 저장 (vCard) 버튼 -->
-            <button onclick="downloadVCard()" class="btn-full-width flex items-center justify-center px-6 py-3 bg-purple-600 text-white rounded-xl shadow-lg hover:bg-purple-700 transition duration-300 ease-in-out transform hover:scale-105">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                연락처 저장 (vCard)
-            </button>
-        </div>
-    </div>
+    </section>
 
     <script>
+        // Script from carrot.html for vCard download
         function downloadVCard() {
             // 여기에 이미지의 Base64 인코딩 문자열을 넣어주세요.
-            // 예시: const base64Image = "iVBORw0KGgoAAAANSUhEUgAA...";
+            // 예시: const base64Image = "iVB9w0KGgoAAAANSUhEUgAA...";
             // 실제 이미지(business card.webp)를 Base64로 인코딩하여 아래 변수에 할당해야 합니다.
             // Base64 인코딩은 온라인 도구(예: Base64 Image Encoder)를 사용하거나,
             // Python 등 프로그래밍 언어를 통해 수행할 수 있습니다.
