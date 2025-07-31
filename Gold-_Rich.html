@@ -9,13 +9,14 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body {
-            font-family: 'Inter', 'Pretendard', '맑은 고딕', sans-serif; /* Added Korean fonts */
+            font-family: 'Inter', 'Pretendard', '맑은 고딕', sans-serif;
             background-color: #f0f4f8; /* Light blue-gray background */
             color: #333; /* Darker text for readability */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             padding: 0; /* Ensures no default padding on body */
+            line-height: 1.6;
         }
         .header-bg {
             background: linear-gradient(to right, #0a2d5e, #1a4a8a); /* Deep blue gradient */
@@ -23,118 +24,201 @@
         .section-bg-light {
             background-color: #ffffff;
         }
+        /* 이미지와 버튼의 레이아웃을 원본 파일과 동일하게 유지 */
         .card-image {
             width: 100%;
             height: auto;
-            object-fit: cover; /* Ensures image covers the area, cropping if necessary */
-            border-top-left-radius: 2rem;
-            border-top-right-radius: 2rem;
-            border-bottom-left-radius: 2rem;
-            border-bottom-right-radius: 2rem;
+            object-fit: cover;
+            /* 라운드 사이즈 50% 축소 (1rem -> 0.5rem) */
+            border-radius: 0.5rem;
         }
         .additional-image {
             width: 100%;
             height: auto;
             object-fit: cover;
-            border-radius: 0.75rem; /* rounded-xl */
+            /* 라운드 사이즈 50% 축소 (0.75rem -> 0.375rem) */
+            border-radius: 0.375rem;
         }
         .btn-full-width {
-            width: calc(100% - 2rem); /* Full width minus gap on sides for small screens */
-            max-width: 20rem; /* Max width for larger screens to keep it centered and readable */
+            width: calc(100% - 2rem);
+            max-width: 20rem;
         }
-        /* 줄 간격 조정을 위해 새로운 클래스 정의 및 li에 직접 적용 */
         .feature-list-spacing li {
-            line-height: 1.8 !important; /* 180% of the font size */
+            line-height: 1.8 !important;
+        }
+        
+        /* 새로운 콘텐츠에 대한 스타일 추가 (기존 스타일과 충돌 최소화) */
+        .story-text {
+            font-style: italic;
+            color: #555;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #e6fffa;
+            border-left: 5px solid #38b2ac;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #856404;
+            text-align: center;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ffeeba;
+            font-size: 0.95rem;
+        }
+        .list-disc {
+            padding-left: 1.5rem;
+        }
+        .list-disc li::before {
+            content: "•";
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        /* 은은하게 페이드되는 애니메이션 효과 */
+        @keyframes subtle-fade {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+        /* 애니메이션 속도를 2초에서 4초로 변경 */
+        .subtle-fade-animation {
+            animation: subtle-fade 4s ease-in-out infinite;
+        }
+
+        /* 모델하우스 이벤트 텍스트 스타일 추가 */
+        .event-text-stroke {
+            color: #fcd34d; /* Yellow color */
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Black stroke */
         }
     </style>
 </head>
 <body class="antialiased">
+    <section class="bg-gray-100 py-6 md:py-10 text-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg mx-auto max-w-sm w-full p-6">
+                <!-- 명함 이미지 (원본과 동일) -->
+                <img src="https://raw.githubusercontent.com/JUNGDONGSU/PRUGIO/refs/heads/main/image/Gold-_Rich_business_card.webp" alt="금부자 팀장 명함 이미지" class="card-image p-0">
+                <!-- 사용자 요청에 따라 명함 아래에 새 이미지 추가 -->
+                <img src="https://raw.githubusercontent.com/JUNGDONGSU/PRUGIO/refs/heads/main/image/Gold-_Rich_main.webp" alt="광고 메인 이미지" class="additional-image mt-4 shadow-md">
 
-    <!-- 동수당근 Section (Digital Business Card) - Updated Content -->
-    <section id="dongsu-carrot" class="section-bg-light py-0 px-0 rounded-xl shadow-lg mt-8 mb-6 mx-auto max-w-7xl flex-grow flex items-center justify-center">
-        <div class="container mx-auto text-center px-0">
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden max-w-sm w-full mx-auto">
-                <!-- Main business card image - Replaced with Gold-_Rich_business_card.webp -->
-                <img src="https://raw.githubusercontent.com/JUNGDONGSU/PRUGIO/refs/heads/main/image/Gold-_Rich_business_card.webp" alt="금부자 팀장 명함 이미지" class="card-image p-6">
+                <!-- HWP 파일 내용 시작 -->
+                <h1 class="text-2xl font-bold text-center text-blue-800 mt-6 mb-2">
+                    서울은 규제, 평택은 <span class="text-red-600 text-4xl">기회!</span>
+                </h1>
+                <h2 class="text-xl font-bold text-center text-gray-800 mb-4">
+                    아주대학병원 코앞!<br> GTX 옆자리 한신더휴
+                </h2>
+                <p class="story-text text-sm">
+                    "저는 6.27 부동산 규제 발표 이후, 많은 분들이 혼란스러워하는 모습을 보며 안타까움을 느꼈습니다.
+                    하지만 저는 이 시기가 오히려 새로운 기회를 잡을 수 있는 '골든 타임'이라고 확신했습니다.
+                    서울의 규제를 현명하게 피하고, 미래 가치를 선점할 수 있는 곳, 바로 평택 브레인시티 '한신더휴'에서 그 해답을 찾았습니다.
+                    저의 깊은 분석과 확신을 바탕으로, 여러분께 이 특별한 기회를 소개하고자 합니다."
+                </p>
+                <!-- 애니메이션 수정: sparkle-animation 대신 subtle-fade-animation 적용 -->
+                <p class="text-lg text-center font-semibold text-red-600 mt-6 mb-4 subtle-fade-animation">
+                    ♦6.27 부동산 규제발표로...<br>어수선한 이때...
+                    <br>서울규제 피하고, 미래가치를 선점하는<br>브레인시티 핵심입지!
+                    <br>투자자도, 실입주자도,평택에 신규분양 아파트 구입을 염두해두고 계신 분들은 
+                    <br><span class="text-blue-700 text-2xl">지금이 타이밍 입니다!!!</span>
+                </p>
 
-                <!-- New image added here (from previous request) - Removed Lee_Gift_Voucher.webp from here -->
-                <div class="p-6 pt-0 flex flex-col items-center gap-4">
-                    <!-- 명함 아래쪽에 Gold-_Rich_main.webp 이미지 배치 -->
-                    <img src="https://raw.githubusercontent.com/JUNGDONGSU/PRUGIO/refs/heads/main/image/Gold-_Rich_main.webp" alt="Gold Rich 메인 이미지" class="additional-image mt-4 shadow-md">
-                </div>
+                <!-- 사용자 요청에 따라 "지금이 타이밍 입니다!!!" 문구 아래에 새 이미지 추가 -->
+                <img src="https://raw.githubusercontent.com/JUNGDONGSU/PRUGIO/refs/heads/main/image/Gold_Rich.webp" alt="골드리치 메인 이미지" class="additional-image mt-4 shadow-md">
 
-                <!-- Apartment Introduction - Updated Text -->
                 <div class="bg-blue-50 p-4 rounded-xl mb-6 shadow-inner mx-0 text-left">
-                    <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">주말에 한신더휴 모델하우스<br>집구경오세요!!</h3>
-                    <p class="text-gray-700 text-base leading-relaxed mb-4">
-                        ●평택에 신규분양 아파트 구입을 염두해두고,알아보 계신분들은 꼭 주목해 보실 만한~~~
-                        "브레인시티 최고의 입지"와 구조, 가격,브랜드~~ 한신더휴 아파트 모델하우스에
-                        꼭 한번 다녀가십시오!!
-                    </p>
-                    <p class="text-gray-700 text-base leading-relaxed mb-4">
-                        ☆평택역~터미널근처 구도심 신규분양 아파트대비 분양가가 (구34평형기준)최소 5천만원~1억2천 저렴 합니다~~~
-                    </p>
-                    <p class="text-gray-700 text-base leading-relaxed mb-4">
-                        ○6.27부동산 대출제한과 무관하며, 34평형기준~ 계약금5%중~1천만원만 있으심,잔금을(약1,500정도)입주때 까지 무이자 대출도 가능하십니다!
-                        (5%전액 현금 지급시 캐쉬백 해드립니다!)
-                    </p>
-                </div>
-
-                <!-- 선착순 줍줍 정보 및 상세 내용 - Updated Text -->
-                <div class="bg-gray-50 p-4 rounded-xl mb-6 shadow-inner mx-0 text-left">
-                    <!-- 이미지를 Gold-_Rich_1752714216749.webp로 교체 -->
-                    <img src="https://raw.githubusercontent.com/JUNGDONGSU/PRUGIO/refs/heads/main/image/Gold-_Rich_1752714216749.webp" alt="발코니 확장 이미지" class="additional-image mt-4 shadow-md mb-4">
-
-                    <!-- Removed previous h3 and p tags here -->
-
-                    <!-- 줄간격 조정을 위해 feature-list-spacing 클래스 적용 -->
-                    <ul class="list-disc list-inside text-gray-700 text-base mb-4 feature-list-spacing">
-                        <li>●발코니확장비:800만원대(구도심3천만원대)</li>
-                        <li>○현관팬트리(창고)장:무상제공</li>
-                        <li>●거실 우물형천정 무상시공</li>
-                        <li>○드레스룸 크기:어디서도 볼 수없는 크기(40평형대보다 넓음)</li>
+                    <h3 class="text-lg font-bold text-blue-700 mb-3 text-center">주목해 볼 만한 현장! <br>입지깡패 "한신더휴"</h3>
+                    <ul class="list-disc list-inside text-gray-700 text-sm mb-4 feature-list-spacing">
+                        <li><strong>아주대학병원 2천여 병상(예정지)바로옆:</strong> 메디컬복합 클러스터/고소득의료인,연구인력 확보</li>
+                        <li><strong>KAIST 평택캠퍼스 예정:</strong> 전국최고수준 학군+교육열 수요층 유입</li>
+                        <li><li><strong>대형공원, 시립도서관, 초품아 아파트:</strong> 도보통학가능+학습인프라 완비</li>
+                        <li><strong>GTX-A,C인근:</strong> 수도권 접근성+서울출퇴근 용이(송탄IC/광역노선)</li>
                     </ul>
+                </div>
+                <!-- 사용자 요청으로 GTX-A,C인근 문구 하단에 이미지 추가하고, 텍스트와 분리 -->
+                <!-- 마진값을 mb-8로 늘려 아래 박스와의 간격을 넓혔으며, 보더를 추가했습니다. -->
+                <img src="https://raw.githubusercontent.com/JUNGDONGSU/PRUGIO/refs/heads/main/image/Gold_Rich_home.webp" alt="GTX-A,C 인근 이미지" class="additional-image mt-4 mb-8 shadow-md border-2 border-gray-300 rounded-xl">
 
-                    <p class="text-gray-700 text-base font-bold text-center mb-4">
-                        ●백문이 불여일견이라했습니다!<br>○발품팔아 알아보신다면, 후회없는 선택이 되리라 확신합니다!^^
+                <p class="highlight">
+                    평택역 구도심 신규분양 아파트 분양가 대비, 84m²기준 최소 6천만원~1억2천정도 저렴한 분양가로 만나실 수 있습니다.
+                </p>
+                <p class="highlight">
+                    브레인시티는 분양가상한제 구간이 적용된 곳이라, 발코니확장비 또한 구도심,타지역대비 2천여만원 저렴히 제공합니다.(800만원대)
+                </p>
+
+                <!-- HWP 파일 계약금 및 입주 관련 내용 -->
+                <div class="bg-gray-50 p-4 rounded-xl mb-6 shadow-inner mx-0 text-left">
+                    <h4 class="text-md font-bold text-gray-700 mb-2">🗓️ 입주 및 계약 조건</h4>
+                    <ul class="list-disc list-inside text-gray-700 text-sm mb-4 feature-list-spacing">
+                        <li><strong>28년 1월 입주예정:</strong> 지금 열심히 공사중에 있습니다 (현장탐방 원하시는분 연락주시면,함께 탐방안내 해드립니다!) ☎1811-0526</li>
+                        <li><strong>계약금 5% (입주까지 부담 없음):</strong> 500만원으로 계약 발행, 5% 잔금(1,500~1,600)은 입주까지 무이자로 신용대출도 가능!</li>
+                        <li><strong>현금 캐시백 제도:</strong> 계약금 5%를 전액 현금으로 납부하시는 분은 현금 캐시백 제도가 크니, 문의주세요!</li>
+                    </ul>
+                </div>
+
+                <!-- 사용자 요청: CTA 문구를 박스로 감싸기 -->
+                <div class="p-4 mb-6 border-2 border-gray-300 rounded-xl bg-blue-50 shadow-md">
+                    <!-- 이벤트 및 CTA 문구 -->
+                    <p class="text-lg font-bold text-center text-red-700 mb-2">
+                        ▶▶지금이 가장 쌉니다!<br> 규제 무풍지대 브레인시티 한신더휴!
+                    </p>
+                    <p class="text-lg font-bold text-center text-red-700 mb-6">
+                        ▶▶지금 아니면 다시는 못살지도 모릅니다!
+                    </p>
+                    <p class="text-base text-center font-medium text-gray-700 mb-0">
+                        지금의 분양가는 GTX착공 전 가격, 아주대병원 건설 전 가격, 카이스트 입주전 가격입니다!
+                        <br>앞으로 1~2년후 같은평수가 억 단위로 오를 수도 있습니다!
+                        <br><span class="font-bold text-blue-600">미분양일 때가 마지막 기회일 수 있어요!</span>
                     </p>
                 </div>
 
-                <!-- Additional images (황금열쇠만 남음) - Re-added "계약자 이벤트" heading and "Gift Voucher" image -->
-                <h4 class="text-md font-bold text-gray-700 mb-1 text-left px-6">🎁 홍보관 예약 방문 고객 이벤트</h4>
+                <!-- 이미지 및 버튼들 -->
                 <div class="pb-6 pt-0 flex flex-col items-center gap-4 px-0">
-                    <!-- 사은품 교환권 이미지를 Gold-_Rich_Voucher.webp로 교체 -->
-                    <img src="https://raw.githubusercontent.com/JUNGDONGSU/PRUGIO/refs/heads/main/image/Gold-_Rich_Voucher.webp" alt="사은품 교환권 이미지" class="additional-image mt-4 shadow-md mb-4">
-                    <!-- "계약시 황금열쇠 증정" 문구 추가 -->
-                    <p class="text-lg font-bold text-orange-600 mb-2">📢 계약시 황금열쇠 증정</p>
+                    <!-- 모델하우스 방문 예약고객 이벤트 문구 추가 -->
+                    <p class="text-center text-xl font-bold event-text-stroke">모델하우스 방문 예약 고객 이벤트</p>
+                    <!-- 사은품 교환권 이미지 유지 -->
+                    <img src="https://raw.githubusercontent.com/JUNGDONGSU/PRUGIO/refs/heads/main/image/Gold-_Rich_Voucher.webp" alt="사은품 교환권 이미지" class="additional-image mt-1 shadow-md mb-4">
+                    
+                    <!-- 텍스트를 이미지와 한 줄에 배치하고, 가운데 정렬, 이미지 크기 반으로 줄임 -->
+                    <div class="flex items-center justify-center gap-4">
+                         <!-- 이미지 크기를 50% 더 줄임 (w-1/2 -> w-1/4) -->
+                         <img src="https://raw.githubusercontent.com/JUNGDONGSU/PRUGIO/refs/heads/main/image/Gold_Rich_Gift.webp" alt="선물 상자 이미지" class="additional-image w-1/4">
+                         <p class="text-md font-bold text-orange-600 whitespace-nowrap">계약자 이벤트</p>
+                    </div>
+                    
+                    <!-- 황금열쇠 이미지 유지 -->
                     <img src="https://raw.githubusercontent.com/JUNGDONGSU/PRUGIO/refs/heads/main/image/golden_key.webp" alt="황금열쇠 최적화 이미지" class="additional-image shadow-md">
                 </div>
 
-                <!-- Contact Information - Re-added heading -->
+                <!-- Contact Information -->
                 <div class="bg-blue-50 p-6 rounded-b-3xl text-center">
-                    <h4 class="text-xl font-bold text-blue-700 mb-3">☎ 상담 / 방문 예약 문의</h4>
+                    <h4 class="text-xl font-bold text-blue-700 mb-3">☎ 상담 / 모델하우스 방문 예약</h4>
                     <p class="text-gray-700 text-base mb-4">
                         ※방문예약 필수 입니다~
                     </p>
 
-                    <!-- Buttons arranged vertically -->
                     <div class="flex flex-col items-center gap-4 px-0 pb-0">
-                        <!-- 전화 걸기 버튼 -->
                         <a href="tel:01075767213" class="btn-full-width flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-xl shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">
                             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
                             전화 걸기
                         </a>
-                        <!-- 문자 보내기 버튼 -->
                         <a href="sms:01075767213" class="btn-full-width flex items-center justify-center px-6 py-3 bg-yellow-600 text-white rounded-xl shadow-lg hover:bg-yellow-700 transition duration-300 ease-in-out transform hover:scale-105">
                             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.941 0 01-4.758-1.12L3 17l1.62-2.16a8.941 8.941 0 01-1.12-4.758c0-4.418 3.582-8 8-8s8 3.582 8 8z" clip-rule="evenodd"></path></svg>
                             문자 보내기
                         </a>
-                        <!-- 홈페이지 방문 버튼 - hidden class 제거 -->
                         <a href="https://goldrich.info/" target="_blank" class="btn-full-width flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-xl shadow-lg hover:bg-green-700 transition duration-300 ease-in-out transform hover:scale-105">
                             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>
                             홈페이지 방문
                         </a>
-                        <!-- 연락처 저장 (vCard) 버튼 - 기존 스크립트 유지 -->
                         <button onclick="downloadVCard()" class="btn-full-width flex items-center justify-center px-6 py-3 bg-purple-600 text-white rounded-xl shadow-lg hover:bg-purple-700 transition duration-300 ease-in-out transform hover:scale-105">
                             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                             연락처 저장 (vCard)
@@ -146,15 +230,7 @@
     </section>
 
     <script>
-        // Script from carrot.html for vCard download - existing script retained
         function downloadVCard() {
-            // 여기에 이미지의 Base64 인코딩 문자열을 넣어주세요.
-            // 예시: const base64Image = "iVB9w0KGgoAAAANSUhEUgAA...";
-            // 실제 이미지(business card.webp)를 Base64로 인코딩하여 아래 변수에 할당해야 합니다.
-            // Base64 인코딩은 온라인 도구(예: Base64 Image Encoder)를 사용하거나,
-            // Python 등 프로그래밍 언어를 통해 수행할 수 있습니다.
-            const base64Image = ""; // 여기에 Base64 인코딩된 이미지 데이터를 붙여넣으세요.
-
             const vcardContent = `BEGIN:VCARD
 VERSION:3.0
 N:금;부자;;;
